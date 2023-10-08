@@ -1,15 +1,14 @@
-
+let result = [];
+console.log(result);
 
 loopFunc();
 function loopFunc() {
     for (var i = 0; i < 5; i++) { 
         
-alert(gameFunc());
+gameFunc();
 function gameFunc() {
     
-    let compChoice = compChoiceFunc();
-    console.log(compChoice);
-    
+    let compChoice = compChoiceFunc();    
     function compChoiceFunc(compChoice) {
         let numChoice = (Math.floor(Math.random() * 3) + 1);
           if (numChoice == 1) {
@@ -24,10 +23,8 @@ function gameFunc() {
 
     let userChoice = prompt(`Please enter 'Rock', 'Paper', or 'Scissors':`);
     let standardUC = userChoice.toLowerCase();
-    console.log(standardUC);
     let winStatus = winDecider(standardUC, compChoice);
-    console.log(winStatus);
-    return winStatus
+    result.unshift(winStatus);
 
     function winDecider(standardUC, compChoice, winStatus) {
         if (standardUC == "rock" && compChoice == "scissors" || standardUC == "paper" && compChoice == "rock" || standardUC == "scissors" && compChoice == "paper") {   
@@ -44,7 +41,3 @@ function gameFunc() {
 }
 
 }
-
-
-
-
