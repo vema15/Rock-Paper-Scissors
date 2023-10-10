@@ -22,7 +22,7 @@ btn_1.addEventListener('click', () => gameFunc());
             let standardUC = userChoice.toLowerCase();
             let winStatus = winDecider(standardUC, compChoice);
             result.unshift(winStatus);
-            
+           
 
             function winDecider(standardUC, compChoice, winStatus) {
                 if (standardUC == "rock" && compChoice == "scissors" || standardUC == "paper" && compChoice == "rock" || standardUC == "scissors" && compChoice == "paper") {
@@ -39,8 +39,30 @@ btn_1.addEventListener('click', () => gameFunc());
             document.getElementById("player_result").innerHTML = userChoice.toUpperCase();
             document.getElementById("match_result").innerHTML = winStatus.toUpperCase();
     
-            
-            console.log(result);
+            runningResultFunc(result);
+            function runningResultFunc(result) {
+                const counts = [];
+                result.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+                console.log(counts);
+                
+                const winCount = counts['You have won!'] || 0;
+                const lossCount = counts['You lose, please try again!'] || 0;
+                const tieCount = counts['You have tied!'] || 0;
+
+                if (parseInt(winCount) > parseInt(lossCount)) {
+                    document.getElementById('running-result').innerhtml = "You are winning!";
+                } else if (parseInt(winCount) < parseInt(lossCount)) {
+                    document.getElementById('running-result').innerHTML = "You are losing!";
+                } else {
+                    document.getElementById('running-result').innerHTML = "You are tied!";
+                }
+                
+
+
+
+              
+            }
+
        
         }
     
@@ -49,6 +71,13 @@ btn_2.addEventListener('click', ()=> resetFunc());
 function resetFunc() {
     location.reload();
 }
+
+
+
+
+
+
+
 
 
 
