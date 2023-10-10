@@ -50,12 +50,16 @@ btn_1.addEventListener('click', () => gameFunc());
                 const tieCount = counts['You have tied!'] || 0;
 
                 if (parseInt(winCount) > parseInt(lossCount)) {
-                    document.getElementById('running-result').innerhtml = "You are winning!";
+                    console.log('You are winning!');
+                    document.getElementById('running-result').innerHTML = "You are winning!";
                 } else if (parseInt(winCount) < parseInt(lossCount)) {
+                   console.log('You are losing!');
                     document.getElementById('running-result').innerHTML = "You are losing!";
-                } else {
-                    document.getElementById('running-result').innerHTML = "You are tied!";
-                }
+                } else if (parseInt(winCount) == parseInt(lossCount)){
+                    console.log('You are tied!');
+                    document.getElementById('running-result').innerHTML = "You are tied!"
+                    //document.getElementById('running-result').innerHTML = "You are tied!";
+                } 
                 
 
 
