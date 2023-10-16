@@ -1,41 +1,83 @@
-html {
-    height: 100vh;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+body {
+    margin: 0;
+    min-height: 100vh;
+
 }
 
 
-ul {
-    list-style: none;
+.header-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+    background: linear-gradient(0.25turn, #f69d3c, #ebf8e1, #f69d3c);
+    padding-top: 0px;
+    
+    font-family: 'Lato';
+    font-weight: 400;
+
+    
 }
+
+.header {
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+.subheader {
+    margin-left: 15px;
+    padding-bottom: 5px;
+}
+
+.overall-display {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+
+    font-family: 'Lato';
+
+    background: linear-gradient(to bottom left, #f69d3c, #ebf8e1, #3f87a6);
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #3f87a6);
+    min-height: 10vh;
+}
+
+
 
 .row-1 {
     display: flex;
     flex-direction: row;
+    gap: 20px;
+    
 }
 
 .container-1,
 .container-2,
 .container-3 {
     display: flex;
-    border: 1px solid black;
-    text-align: center;
+    flex-direction: row;
+    gap: 5px;
+
 }
 
-.container-4 {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
 
-.container-5 {
-    display: flex;
-}
 
-.overall-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+#button-1,
+#button-2 {
+    font-family: inherit;
+    margin-left: 5px;
     
+    border-radius: 5%;
+  
 }
-
