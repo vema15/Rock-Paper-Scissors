@@ -42,8 +42,9 @@ btn_1.addEventListener('click', () => gameFunc());
             runningResultFunc(result);
             function runningResultFunc(result) {
                 const counts = [];
-                result.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-                console.log(counts);
+                result.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });                
+                console.log(counts)
+            
                 
                 const winCount = counts['You have won!'] || 0;
                 const lossCount = counts['You lose, please try again!'] || 0;
@@ -75,3 +76,5 @@ btn_2.addEventListener('click', ()=> resetFunc());
 function resetFunc() {
     location.reload();
 }
+
+//
