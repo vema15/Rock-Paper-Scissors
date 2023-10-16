@@ -1,12 +1,5 @@
 
-
-
-loopFunc();
-function loopFunc() {
-    let result = [];
-
-var i = 0;
-if (i < 5) {
+let result = [];
 
 let btn_1 = document.getElementById('button-1');
 btn_1.addEventListener('click', () => gameFunc());
@@ -29,7 +22,7 @@ btn_1.addEventListener('click', () => gameFunc());
             let standardUC = userChoice.toLowerCase();
             let winStatus = winDecider(standardUC, compChoice);
             result.unshift(winStatus);
-            
+           
 
             function winDecider(standardUC, compChoice, winStatus) {
                 if (standardUC == "rock" && compChoice == "scissors" || standardUC == "paper" && compChoice == "rock" || standardUC == "scissors" && compChoice == "paper") {
@@ -46,25 +39,47 @@ btn_1.addEventListener('click', () => gameFunc());
             document.getElementById("player_result").innerHTML = userChoice.toUpperCase();
             document.getElementById("match_result").innerHTML = winStatus.toUpperCase();
     
-            
-            console.log(result);
+            runningResultFunc(result);
+            function runningResultFunc(result) {
+                const counts = [];
+                result.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+                console.log(counts);
+                
+                const winCount = counts['You have won!'] || 0;
+                const lossCount = counts['You lose, please try again!'] || 0;
+                const tieCount = counts['You have tied!'] || 0;
+
+                if (parseInt(winCount) > parseInt(lossCount)) {
+                    document.getElementById('running-result').innerhtml = "You are winning!";
+                } else if (parseInt(winCount) < parseInt(lossCount)) {
+                    document.getElementById('running-result').innerHTML = "You are losing!";
+                } else if (parseInt(winCount) == parseInt(lossCount) == parseInt(tieCount)) {
+                    document.getElementById('running-result').innerHTML = "You are tied!";
+                } else {
+                    document.getElementById('running-result').innerHTML = "You are tied!";
+                }
+                
+
+
+
+              
+            }
+
        
         }
-        i++;
-    }
+    
+let btn_2 = document.getElementById('button-2');
+btn_2.addEventListener('click', ()=> resetFunc());
+function resetFunc() {
+    location.reload();
+}
 
-  
-        
-    }
 
 
 
-    let btn_2 = document.getElementById('button-2');
-    btn_2.addEventListener('click', ()=> resetFunc());
 
-    function resetFunc() {
-        location.reload();
-    }
+
+
 
 
 

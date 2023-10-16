@@ -8,8 +8,8 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,37 +18,39 @@
         <div class="subheader">A game of finesse turned into a game of luck</div>
     </div>
     <div class="overall-display">
-        <div class="row-1">
-            <div class="container-1">
-                <p class="comp-choice">Computer's Choice: </p>
-                <p class="box-1" id="comp_result"></p>
+            <div class="row-1">
+                <div class="container-1">
+                    <p class="comp-choice">Computer's Choice: </p>
+                    <p class="box-1" id="comp_result"></p>
+                </div>
+                <div class="container-2">
+                    <p class="player-choice">Your Choice: </p>
+                    <p class="box-2" id="player_result"></p>
+                </div>
+                <div class="container-3">
+                    <p class="match-result">Match Results: </p>
+                    <p class="box-3" id="match_result"></p>
+                </div>
             </div>
-            <div class="container-2">
-                <p class="player-choice">Your Choice: </p>
-                <p class="box-2" id="player_result"></p>
+            <div class="row-2">
+                <div class="container-4">
+                    <input type="button" id="button-1" value="Click me to initiate round!">
+                    <input type="button" id="button-2" value="Click me to restart game!">
+                </div>
             </div>
-            <div class="container-3">
-                <p class="match-result">Match Results: </p>
-                <p class="box-3" id="match_result"></p>
+
+            <div class="row-3">
+                <div class="container-5">
+                    <p id="running-result">You have to play to win!</p>
+                </div>
             </div>
-        </div>
-        <div class="row-2">
-            <div class="container-4">
-                <input type="button" id="button-1" value="Click me to initiate round!">
-                <input type="button" id="button-2" value="Click me to restart game!">
-            </div>
-        </div>
         
-        <div class="row-3">
-            <div class="container-5">
-                <p id="running-result">You have to play to win!</p>
-            </div>
-        </div>
+    </div>
 
     </div>
-   <div class="footer-container">
+    <div class="footer-container">
         <div class="maker-credit">Project brought to you by Vema15</div>
-   </div>
+    </div>
 
 
     <script src="main.js"></script>

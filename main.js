@@ -75,13 +75,3 @@ btn_2.addEventListener('click', ()=> resetFunc());
 function resetFunc() {
     location.reload();
 }
-
-
-
-
-
-
-
-
-
-
